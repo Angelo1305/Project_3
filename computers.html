@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="Images/apple-touch-icon-57x57.png">
   <script src="js/script.js" defer></script>
-
 </head>
 <body>
   <nav>
@@ -15,6 +14,7 @@
     <a href="about.html">About Me</a>
     <a href="computers.html" class="active">Computers</a>
     <a href="resume.html">Resume</a>
+    <a href="map.html">Map</a>
   </nav>
 
   <h1>Computers</h1>
@@ -31,5 +31,16 @@
   <h2>Tower Build with RTX 5070</h2>
   <img src="Images/IMG_0421.jpeg" alt="PC tower build with RTX 5070">
   <p>This tower features an RTX 5070, which I found super cool.</p>
+
+  <h2>Gallery Slider</h2>
+  <div class="slider">
+    <button class="slider-btn" onclick="prevSlide()">❮</button>
+
+    <img class="slide" src="Images/IMG_0266.jpeg" alt="Build 1">
+    <img class="slide" src="Images/IMG_0419.jpeg" alt="Build 2">
+    <img class="slide" src="Images/IMG_0421.jpeg" alt="Build 3">
+
+    <button class="slider-btn" onclick="nextSlide()">❯</button>
+  </div>
 </body>
 </html>
