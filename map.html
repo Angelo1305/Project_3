@@ -21,6 +21,14 @@
   </nav>
 
   <h1>Zelda World Map</h1>
+
+  <div style="margin: 1.5rem auto; text-align: center;">
+    <button onclick="panTo('castle')">Go to Hyrule Castle</button>
+    <button onclick="panTo('woods')">Go to Lost Woods</button>
+    <button onclick="panTo('village')">Go to Kakariko Village</button>
+    <button onclick="toggleMapStyle()">Toggle Map Style</button>
+  </div>
+
   <div id="map" style="height: 500px; width: 90%; margin: 2rem auto; border: 0.3rem solid #b8860b; border-radius: 0.5rem;"></div>
 </body>
 </html>
