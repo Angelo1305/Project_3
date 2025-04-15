@@ -73,6 +73,20 @@ function initMap() {
   });
 }
 
+// ✅ Jump-to-Location Buttons (for the map)
+function panTo(location) {
+  const targets = {
+    castle: { lat: 41.8818, lng: -87.6232 },
+    woods: { lat: 41.8880, lng: -87.6354 },
+    village: { lat: 41.8826, lng: -87.6226 }
+  };
+
+  if (map && targets[location]) {
+    map.panTo(targets[location]);
+    map.setZoom(14);
+  }
+}
+
 // === SLIDER WITH DOTS + FADE + AUTOPLAY ===
 let currentSlide = 0;
 let autoSlideInterval = null;
