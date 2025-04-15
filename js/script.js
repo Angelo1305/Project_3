@@ -45,7 +45,7 @@ function initMap() {
       title: loc.title,
       icon: {
         url: loc.icon,
-        scaledSize: new google.maps.Size(60, 60) // Increased size
+        scaledSize: new google.maps.Size(60, 60)
       },
       animation: google.maps.Animation.DROP
     });
@@ -73,32 +73,26 @@ function initMap() {
   });
 }
 
-function panTo(location) {
-  const targets = {
-    castle: { lat: 41.8818, lng: -87.6232 },
-    woods: { lat: 41.8880, lng: -87.6354 },
-    village: { lat: 41.8826, lng: -87.6226 }
-  };
-
-  if (map && targets[location]) {
-    map.panTo(targets[location]);
-    map.setZoom(14);
-  }
-}
-
-// === SLIDER FUNCTIONALITY ===
+// === SLIDER WITH DOTS + FADE + AUTOPLAY ===
 let currentSlide = 0;
+let autoSlideInterval = null;
+let isHovering = false;
 
 function showSlide(index) {
   const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".slider-dots span");
+
   if (slides.length === 0) return;
 
-  if (index >= slides.length) currentSlide = 0;
-  else if (index < 0) currentSlide = slides.length - 1;
-  else currentSlide = index;
+  currentSlide = (index + slides.length) % slides.length;
 
-  slides.forEach(slide => (slide.style.display = "none"));
-  slides[currentSlide].style.display = "block";
+  slides.forEach((slide, i) => {
+    slide.classList.remove("active");
+    if (dots[i]) dots[i].classList.remove("active");
+  });
+
+  slides[currentSlide].classList.add("active");
+  if (dots[currentSlide]) dots[currentSlide].classList.add("active");
 }
 
 function nextSlide() {
@@ -109,9 +103,41 @@ function prevSlide() {
   showSlide(currentSlide - 1);
 }
 
-// === NAV SCROLL GLOW ===
+function startAutoSlide() {
+  if (!autoSlideInterval) {
+    autoSlideInterval = setInterval(() => {
+      if (!isHovering) nextSlide();
+    }, 4000);
+  }
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlideInterval);
+  autoSlideInterval = null;
+}
+
+function buildDots() {
+  const dotsContainer = document.getElementById("sliderDots");
+  const slides = document.querySelectorAll(".slide");
+  dotsContainer.innerHTML = "";
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => showSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  buildDots();
   showSlide(currentSlide);
+  startAutoSlide();
+
+  const slider = document.getElementById("slider");
+  if (slider) {
+    slider.addEventListener("mouseenter", () => { isHovering = true; });
+    slider.addEventListener("mouseleave", () => { isHovering = false; });
+  }
 
   window.addEventListener("scroll", () => {
     const nav = document.querySelector("nav");
