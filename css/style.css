@@ -84,18 +84,9 @@ img:hover {
   border: none;
 }
 
-.logo:hover {
-  animation: spin 1.2s linear infinite;
-}
-
 @keyframes zoomIn {
   from { transform: scale(0.7); opacity: 0; }
   to   { transform: scale(1); opacity: 1; }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 iframe {
