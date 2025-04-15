@@ -232,3 +232,39 @@ button:hover {
     max-width: 30%;
   }
 }
+.slide {
+  display: none;
+  width: 100%;
+  border: 0.3rem solid #b8860b;
+  border-radius: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.slider-dots span {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #b8860b;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.slider-dots span.active {
+  background-color: #ffd700;
+  opacity: 1;
+}
