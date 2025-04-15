@@ -57,7 +57,7 @@ img {
   border: 0.3rem solid #b8860b;
   border-radius: 0.5rem;
   margin: 1.5rem auto;
-  max-width: 35%;
+  max-width: 60%;
   width: 100%;
   height: auto;
   display: block;
@@ -109,24 +109,46 @@ p {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 768px) {
-  nav {
-    flex-direction: column;
-  }
-
-  nav a {
-    margin: 0.5rem 0;
-  }
-
-  .logo {
-    width: 12rem;
-  }
-
-  iframe {
-    width: 90%;
-    height: auto;
-  }
+/* === SLIDER === */
+.slider {
+  position: relative;
+  max-width: 60%;
+  margin: 2rem auto;
+  overflow: hidden;
 }
+
+.slide {
+  display: none;
+  width: 100%;
+  border: 0.3rem solid #b8860b;
+  border-radius: 0.5rem;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 2rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.slider-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-btn:first-of-type {
+  left: 0;
+}
+
+.slider-btn:last-of-type {
+  right: 0;
+}
+
 /* ======== MOBILE FRIENDLY BREAKPOINTS (min-width) ======== */
 
 /* Small tablets and up (min-width: 600px) */
