@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'MedievalSharp', serif;
+  background-image: url('../Images/Screenshot 2025-04-13 124740.png');
+  background-size: 8%;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+nav {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  border-bottom: 0.2rem solid #b8860b;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.1rem;
+}
+
+nav a:hover {
+  background-color: #444;
+  box-shadow: 0 0 10px 2px #b8860b;
+}
+
+nav a.active {
+  background-color: purple;
+}
+
+h1, h2 {
+  margin-top: 2rem;
+  font-size: 2rem;
+  border-bottom: 0.2rem solid #b8860b;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+img {
+  border: 0.3rem solid #b8860b;
+  border-radius: 0.5rem;
+  margin: 1.5rem auto;
+  max-width: 35%;
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+}
+
+.logo {
+  max-width: 60%;
+  width: 100%;
+  margin: 1.5rem auto;
+  animation: zoomIn 1.5s ease forwards;
+  border: none;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+iframe {
+  display: block;
+  margin: 2rem auto;
+  border: 0.3rem solid #b8860b;
+  border-radius: 0.5rem;
+  max-width: 100%;
+  width: 35rem;
+  height: 20rem;
+}
+
+p {
+  max-width: 80%;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.fixed-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+  }
+
+  .logo {
+    width: 12rem;
+  }
+
+  iframe {
+    width: 90%;
+    height: auto;
+  }
+}
