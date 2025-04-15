@@ -1,6 +1,6 @@
 let map;
 let currentStyle = "545561f1b3af4049"; // Day mode Zelda map ID
-const nightStyle = "6de7a199a37a5442"; 
+const nightStyle = "decc932fae63e1a"; 
 
 function initMap() {
   const center = { lat: 41.8781, lng: -87.6298 };
