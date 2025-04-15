@@ -1,6 +1,4 @@
 let map;
-let currentStyle = "545561f1b3af4049"; // Day mode Zelda map ID
-const nightStyle = "decc932fae63e1a"; 
 
 function initMap() {
   const center = { lat: 41.8781, lng: -87.6298 };
@@ -10,7 +8,7 @@ function initMap() {
     center: center,
     mapTypeControl: true,
     streetViewControl: false,
-    mapId: currentStyle
+    mapId: "545561f1b3af4049"
   });
 
   const locations = [
@@ -63,7 +61,7 @@ function initMap() {
           font-family: 'MedievalSharp', Arial, sans-serif;
         ">
           <h2 style="margin: 0.3rem 0;">${loc.title}</h2>
-          <img src="${loc.image}" alt="${loc.title}" style="width: 60px; margin: 0.5rem auto;" />
+          <img src="${loc.image}" alt="${loc.title}" style="width: 60px; height: 60px; object-fit: contain; margin: 0.5rem auto;" />
           <p>${loc.info}</p>
         </div>
       `
@@ -86,11 +84,6 @@ function panTo(location) {
     map.panTo(targets[location]);
     map.setZoom(14);
   }
-}
-
-function toggleMapStyle() {
-  currentStyle = (currentStyle === "545561f1b3af4049") ? nightStyle : "545561f1b3af4049";
-  map.setOptions({ mapId: currentStyle });
 }
 
 // === SLIDER FUNCTIONALITY ===
