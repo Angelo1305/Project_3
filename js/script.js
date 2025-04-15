@@ -1,6 +1,6 @@
 let map;
-let currentStyle = "545561f1b3af4049"; // Zelda Day Style
-const nightStyle = "decc932fae63e1a"; //night mode 
+let currentStyle = "545561f1b3af4049"; // Day mode Zelda map ID
+const nightStyle = "6de7a199a37a5442"; 
 
 function initMap() {
   const center = { lat: 41.8781, lng: -87.6298 };
@@ -54,9 +54,16 @@ function initMap() {
 
     const infoWindow = new google.maps.InfoWindow({
       content: `
-        <div style="text-align:center;">
-          <h2 style="margin:0.3rem 0;">${loc.title}</h2>
-          <img src="${loc.image}" alt="${loc.title}" style="width:60px; margin:0.5rem auto;" />
+        <div style="
+          text-align: center;
+          background-color: #1e1e1e;
+          color: #f9f9f9;
+          padding: 10px;
+          border-radius: 8px;
+          font-family: 'MedievalSharp', Arial, sans-serif;
+        ">
+          <h2 style="margin: 0.3rem 0;">${loc.title}</h2>
+          <img src="${loc.image}" alt="${loc.title}" style="width: 60px; margin: 0.5rem auto;" />
           <p>${loc.info}</p>
         </div>
       `
@@ -86,7 +93,7 @@ function toggleMapStyle() {
   map.setOptions({ mapId: currentStyle });
 }
 
-// === SLIDER FUNCTIONALITY (still works) ===
+// === SLIDER FUNCTIONALITY ===
 let currentSlide = 0;
 
 function showSlide(index) {
