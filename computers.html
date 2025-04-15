@@ -8,7 +8,6 @@
   <link rel="icon" type="image/png" href="Images/apple-touch-icon-57x57.png">
   <script src="js/script.js" defer></script>
 </head>
-
 <body>
   <nav>
     <a href="index.html">Home</a>
@@ -19,29 +18,37 @@
   </nav>
 
   <h1>Computers</h1>
-  <p>I love working on computers. I've built a few at work, and I wanted to showcase some of the machines I've built or worked on.</p>
-
-  <h2>PC Build with AIO</h2>
-  <img src="Images/IMG_0266.jpeg" alt="Custom PC build with AIO cooler">
-  <p>This build uses an AIO cooler.</p>
-
-  <h2>Laptop Teardown</h2>
-  <img src="Images/IMG_0419.jpeg" alt="Laptop disassembled for learning">
-  <p>This is a laptop I disassembled to learn its structure.</p>
-
-  <h2>Tower Build with RTX 5070</h2>
-  <img src="Images/IMG_0421.jpeg" alt="PC tower build with RTX 5070">
-  <p>This tower features an RTX 5070, which I found super cool.</p>
+  <p>
+    One thing I love doing is working on computers. I've built and repaired multiple systems, and I enjoy learning how they work inside and out.
+    Below are a few of my favorite builds and teardowns.
+  </p>
 
   <h2>Gallery Slider</h2>
-  <div class="slider">
+  <div class="slider" id="slider">
     <button class="slider-btn" onclick="prevSlide()">❮</button>
 
-    <img class="slide" src="Images/IMG_0266.jpeg" alt="Build 1">
-    <img class="slide" src="Images/IMG_0419.jpeg" alt="Build 2">
-    <img class="slide" src="Images/IMG_0421.jpeg" alt="Build 3">
+    <!-- Slide 1 -->
+    <div class="slide">
+      <img src="Images/IMG_0266.jpeg" alt="PC Build with AIO">
+      <p>This build uses an AIO cooler and was focused on clean cable management and efficient airflow.</p>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+      <img src="Images/IMG_0419.jpeg" alt="Laptop Teardown">
+      <p>This was a learning project where I took apart a laptop to study its internal components.</p>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+      <img src="Images/IMG_0421.jpeg" alt="Tower Build with RTX 5070">
+      <p>This is one of my favorite full-size towers featuring an RTX 5070 GPU — powerful and visually impressive.</p>
+    </div>
 
     <button class="slider-btn" onclick="nextSlide()">❯</button>
+
+    <!-- Dot navigation -->
+    <div class="slider-dots" id="sliderDots"></div>
   </div>
 </body>
 </html>
