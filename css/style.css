@@ -24,6 +24,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 999;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav a {
@@ -38,11 +39,17 @@ nav a {
 
 nav a:hover {
   background-color: #444;
-  box-shadow: 0 0 10px 2px #b8860b;
+  box-shadow: 0 0 10px 3px #ffd700;
+  text-shadow: 0 0 6px #ffd700;
 }
 
 nav a.active {
   background-color: purple;
+}
+
+nav.scrolled {
+  box-shadow: 0 0 12px 3px rgba(255, 215, 0, 0.4);
+  background-color: #111;
 }
 
 h1, h2 {
@@ -51,6 +58,7 @@ h1, h2 {
   border-bottom: 0.2rem solid #b8860b;
   display: inline-block;
   padding-bottom: 0.5rem;
+  text-shadow: 0 0 10px #ffd700;
 }
 
 img {
@@ -76,22 +84,26 @@ img:hover {
   border: none;
 }
 
+.logo:hover {
+  animation: spin 1.2s linear infinite;
+}
+
 @keyframes zoomIn {
-  from {
-    transform: scale(0.7);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 iframe {
   display: block;
   margin: 2rem auto;
   border: 0.3rem solid #b8860b;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
   max-width: 100%;
   width: 35rem;
   height: 20rem;
@@ -106,7 +118,11 @@ p {
 
 .fixed-container {
   max-width: 960px;
-  margin: 0 auto;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
 }
 
 /* === SLIDER === */
@@ -115,6 +131,8 @@ p {
   max-width: 60%;
   margin: 2rem auto;
   overflow: hidden;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 20px 4px rgba(255, 215, 0, 0.3);
 }
 
 .slide {
@@ -149,9 +167,27 @@ p {
   right: 0;
 }
 
-/* ======== MOBILE FRIENDLY BREAKPOINTS (min-width) ======== */
+/* === BUTTON STYLES === */
+button {
+  background-color: #222;
+  color: #ffd700;
+  border: 2px solid #b8860b;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'MedievalSharp', Arial, sans-serif;
+  box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+}
 
-/* Small tablets and up */
+button:hover {
+  background-color: #333;
+  box-shadow: 0 0 12px 3px #ffd700;
+  text-shadow: 0 0 6px #ffd700;
+}
+
+/* === RESPONSIVE === */
 @media (min-width: 600px) {
   body {
     font-size: 1.05rem;
@@ -177,7 +213,6 @@ p {
   }
 }
 
-/* Medium devices and up */
 @media (min-width: 900px) {
   body {
     font-size: 1.15rem;
