@@ -1,12 +1,13 @@
+// === GOOGLE MAP FUNCTIONALITY ===
 function initMap() {
-  const center = { lat: 41.8781, lng: -87.6298 }; // Chicago (Zelda Hyrule)
+  const center = { lat: 41.8781, lng: -87.6298 };
 
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 10,
     center: center,
     mapTypeControl: true,
     streetViewControl: false,
-    mapId: "545561f1b3af4049" //  custom Zelda-themed map style
+    mapId: "545561f1b3af4049"
   });
 
   const locations = [
@@ -30,6 +31,7 @@ function initMap() {
     }
   ];
 
+  // Add each marker
   locations.forEach(loc => {
     const marker = new google.maps.Marker({
       position: loc.position,
@@ -42,7 +44,7 @@ function initMap() {
     });
 
     const infoWindow = new google.maps.InfoWindow({
-      content: `<h2>${loc.title}</h2><p>${loc.info}</p>`
+      content: `<div style="color:#222;"><strong>${loc.title}</strong><br>${loc.info}</div>`
     });
 
     marker.addListener("click", () => {
@@ -50,7 +52,8 @@ function initMap() {
     });
   });
 }
-// ====== SLIDER LOGIC ======
+
+// === SLIDER FUNCTIONALITY ===
 let currentSlide = 0;
 
 function showSlide(index) {
@@ -73,7 +76,6 @@ function prevSlide() {
   showSlide(currentSlide - 1);
 }
 
-// Initialize slider when page loads
 document.addEventListener("DOMContentLoaded", () => {
   showSlide(currentSlide);
 });
