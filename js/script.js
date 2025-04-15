@@ -45,7 +45,7 @@ function initMap() {
       title: loc.title,
       icon: {
         url: loc.icon,
-        scaledSize: new google.maps.Size(40, 40)
+        scaledSize: new google.maps.Size(60, 60) // Increased size
       },
       animation: google.maps.Animation.DROP
     });
@@ -61,7 +61,7 @@ function initMap() {
           font-family: 'MedievalSharp', Arial, sans-serif;
         ">
           <h2 style="margin: 0.3rem 0;">${loc.title}</h2>
-          <img src="${loc.image}" alt="${loc.title}" style="width: 60px; height: 60px; object-fit: contain; margin: 0.5rem auto;" />
+          <img src="${loc.image}" alt="${loc.title}" style="width: 80px; height: 80px; object-fit: contain; margin: 0.5rem auto; border: none;" />
           <p>${loc.info}</p>
         </div>
       `
