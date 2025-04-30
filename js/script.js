@@ -17,24 +17,24 @@ function initMap() {
       position: { lat: 41.8818, lng: -87.6232 },
       title: "Hyrule Castle",
       info: "The central point of power and mystery.",
-      icon: "Images/gold-marker.png",
-      image: "Images/hyrule-icon.png"
+      icon: "images/gold-marker.png",
+      image: "images/hyrule-icon-60.png"
     },
     {
       id: "woods",
       position: { lat: 41.8880, lng: -87.6354 },
       title: "Lost Woods",
       info: "A mysterious forest shrouded in fog.",
-      icon: "Images/gray-marker.png",
-      image: "Images/lostwoods-icon.png"
+      icon: "images/gray-marker.png",
+      image: "images/lostwoods-icon-60.png"
     },
     {
       id: "village",
       position: { lat: 41.8826, lng: -87.6226 },
       title: "Kakariko Village",
       info: "A peaceful village rooted in tradition.",
-      icon: "Images/gold-marker.png",
-      image: "Images/kakariko-icon.png"
+      icon: "images/gold-marker.png",
+      image: "images/kakariko-icon-60.png"
     }
   ];
 
@@ -73,7 +73,6 @@ function initMap() {
   });
 }
 
-// ✅ Jump-to-Location Buttons (for the map)
 function panTo(location) {
   const targets = {
     castle: { lat: 41.8818, lng: -87.6232 },
@@ -87,7 +86,6 @@ function panTo(location) {
   }
 }
 
-// === SLIDER WITH DOTS + FADE + AUTOPLAY ===
 let currentSlide = 0;
 let autoSlideInterval = null;
 let isHovering = false;
