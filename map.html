@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>Zelda World Map</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
- <link rel="icon" type="image/png" href="Images/triforce.png">
+  <link rel="icon" type="image/png" href="images/triforce.png">
   <script src="js/script.js" defer></script>
   <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS-UAFGuXF4ULlK8UqZhEpaEHyNGm7g90&callback=initMap">
@@ -23,9 +23,15 @@
   <h1>Zelda World Map</h1>
 
   <div style="margin: 1.5rem auto; text-align: center;">
-    <button onclick="panTo('castle')">Go to Hyrule Castle</button>
-    <button onclick="panTo('woods')">Go to Lost Woods</button>
-    <button onclick="panTo('village')">Go to Kakariko Village</button>
+    <button onclick="panTo('castle')">
+      <img src="images/hyrule-icon-60.png" alt="Hyrule Icon"> Go to Hyrule Castle
+    </button>
+    <button onclick="panTo('woods')">
+      <img src="images/lostwoods-icon-60.png" alt="Lost Woods Icon"> Go to Lost Woods
+    </button>
+    <button onclick="panTo('village')">
+      <img src="images/kakariko-icon-60.png" alt="Kakariko Icon"> Go to Kakariko Village
+    </button>
   </div>
 
   <div id="map" style="height: 500px; width: 90%; margin: 2rem auto; border: 0.3rem solid #b8860b; border-radius: 0.5rem;"></div>
