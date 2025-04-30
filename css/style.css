@@ -2,8 +2,8 @@
 
 body {
   margin: 0;
-  font-family: 'MedievalSharp', serif;
-  background-image: url('../Images/Screenshot 2025-04-13 124740.png');
+  font-family: 'MedievalSharp', Georgia, serif;
+  background-image: url('../images/Screenshot 2025-04-13 124740.png');
   background-size: 8%;
   background-repeat: repeat;
   background-attachment: fixed;
@@ -19,7 +19,7 @@ nav {
   display: flex;
   justify-content: center;
   padding: 1rem;
-  font-family: Arial, sans-serif;
+  font-family: 'MedievalSharp', Georgia, serif;
   border-bottom: 0.2rem solid #b8860b;
   position: sticky;
   top: 0;
@@ -44,7 +44,9 @@ nav a:hover {
 }
 
 nav a.active {
-  background-color: purple;
+  background-color: #b8860b;
+  color: #000;
+  font-weight: bold;
 }
 
 nav.scrolled {
@@ -116,7 +118,31 @@ p {
   box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
 }
 
-/* === SLIDER === */
+button {
+  background-color: #222;
+  color: #ffd700;
+  border: 2px solid #b8860b;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'MedievalSharp', Arial, sans-serif;
+  box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+}
+
+button:hover {
+  background-color: #333;
+  box-shadow: 0 0 12px 3px #ffd700;
+  text-shadow: 0 0 6px #ffd700;
+}
+
+button img {
+  height: 1.2em;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
 .slider {
   position: relative;
   max-width: 60%;
@@ -131,6 +157,13 @@ p {
   width: 100%;
   border: 0.3rem solid #b8860b;
   border-radius: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+  opacity: 1;
 }
 
 .slider-btn {
@@ -158,94 +191,6 @@ p {
   right: 0;
 }
 
-/* === BUTTON STYLES === */
-button {
-  background-color: #222;
-  color: #ffd700;
-  border: 2px solid #b8860b;
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'MedievalSharp', Arial, sans-serif;
-  box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
-}
-
-button:hover {
-  background-color: #333;
-  box-shadow: 0 0 12px 3px #ffd700;
-  text-shadow: 0 0 6px #ffd700;
-}
-
-/* === RESPONSIVE === */
-@media (min-width: 600px) {
-  body {
-    font-size: 1.05rem;
-    padding: 1.5rem;
-  }
-
-  nav a {
-    padding: 0.75rem 1.5rem;
-    font-size: 1.15rem;
-  }
-
-  h1, h2 {
-    font-size: 2.2rem;
-  }
-
-  p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-  }
-
-  img {
-    max-width: 35%;
-  }
-}
-
-@media (min-width: 900px) {
-  body {
-    font-size: 1.15rem;
-    padding: 2rem;
-  }
-
-  nav {
-    padding: 1.5rem 2rem;
-  }
-
-  nav a {
-    font-size: 1.25rem;
-    margin: 0 1.5rem;
-  }
-
-  h1, h2 {
-    font-size: 2.4rem;
-  }
-
-  iframe {
-    width: 40rem;
-    height: 22rem;
-  }
-
-  img {
-    max-width: 30%;
-  }
-}
-.slide {
-  display: none;
-  width: 100%;
-  border: 0.3rem solid #b8860b;
-  border-radius: 0.5rem;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.slide.active {
-  display: block;
-  opacity: 1;
-}
-
 .slider-dots {
   display: flex;
   justify-content: center;
@@ -267,4 +212,49 @@ button:hover {
 .slider-dots span.active {
   background-color: #ffd700;
   opacity: 1;
+}
+
+@media (min-width: 600px) {
+  body {
+    font-size: 1.05rem;
+    padding: 1.5rem;
+  }
+  nav a {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.15rem;
+  }
+  h1, h2 {
+    font-size: 2.2rem;
+  }
+  p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+  }
+  img {
+    max-width: 35%;
+  }
+}
+
+@media (min-width: 900px) {
+  body {
+    font-size: 1.15rem;
+    padding: 2rem;
+  }
+  nav {
+    padding: 1.5rem 2rem;
+  }
+  nav a {
+    font-size: 1.25rem;
+    margin: 0 1.5rem;
+  }
+  h1, h2 {
+    font-size: 2.4rem;
+  }
+  iframe {
+    width: 40rem;
+    height: 22rem;
+  }
+  img {
+    max-width: 30%;
+  }
 }
