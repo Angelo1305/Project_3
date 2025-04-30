@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>Computers</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
- <link rel="icon" type="image/png" href="Images/triforce.png">
+  <link rel="icon" type="image/png" href="images/triforce.png">
   <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -17,38 +17,37 @@
     <a href="map.html">Map</a>
   </nav>
 
-  <h1>Computers</h1>
-  <p>
-    One thing I love doing is working on computers. I've built and repaired multiple systems, and I enjoy learning how they work inside and out.
-    Below are a few of my favorite builds and teardowns.
-  </p>
+  <section>
+    <h1>Computers</h1>
+    <p>
+      One thing I love doing is working on computers. I've built and repaired multiple systems, and I enjoy learning how they work inside and out.
+      Below are a few of my favorite builds and teardowns.
+    </p>
+  </section>
 
-  <h2>Gallery Slider</h2>
-  <div class="slider" id="slider">
-    <button class="slider-btn" onclick="prevSlide()">❮</button>
+  <section>
+    <h2>Gallery Slider</h2>
+    <div class="slider" id="slider">
+      <button class="slider-btn" onclick="prevSlide()">❮</button>
 
-    <!-- Slide 1 -->
-    <div class="slide">
-      <img src="Images/IMG_0266.jpeg" alt="PC Build with AIO">
-      <p>This build uses an AIO cooler and was focused on clean cable management and efficient airflow.</p>
+      <div class="slide">
+        <img src="images/IMG_0266.jpeg" alt="PC Build with AIO">
+        <p>This build uses an AIO cooler and was focused on clean cable management and efficient airflow.</p>
+      </div>
+
+      <div class="slide">
+        <img src="images/IMG_0419.jpeg" alt="Laptop Teardown">
+        <p>This was a learning project where I took apart a laptop to study its internal components.</p>
+      </div>
+
+      <div class="slide">
+        <img src="images/IMG_0421.jpeg" alt="Tower Build with RTX 5070">
+        <p>This is one that I thought was really cool, its a full-size tower featuring an RTX 5070 GPU.</p>
+      </div>
+
+      <button class="slider-btn" onclick="nextSlide()">❯</button>
+      <div class="slider-dots" id="sliderDots"></div>
     </div>
-
-    <!-- Slide 2 -->
-    <div class="slide">
-      <img src="Images/IMG_0419.jpeg" alt="Laptop Teardown">
-      <p>This was a learning project where I took apart a laptop to study its internal components.</p>
-    </div>
-
-    <!-- Slide 3 -->
-    <div class="slide">
-      <img src="Images/IMG_0421.jpeg" alt="Tower Build with RTX 5070">
-      <p>This is one that I thought was really cool, its a full-size tower featuring an RTX 5070 GPU.</p>
-    </div>
-
-    <button class="slider-btn" onclick="nextSlide()">❯</button>
-
-    <!-- Dot navigation -->
-    <div class="slider-dots" id="sliderDots"></div>
-  </div>
+  </section>
 </body>
 </html>
