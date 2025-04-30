@@ -45,7 +45,7 @@ function initMap() {
       title: loc.title,
       icon: {
         url: loc.icon,
-        scaledSize: new google.maps.Size(60, 60)
+        scaledSize: new google.maps.Size(80, 80) // ⬅️ Updated size here
       },
       animation: google.maps.Animation.DROP
     });
@@ -73,6 +73,7 @@ function initMap() {
   });
 }
 
+// Pan to location buttons
 function panTo(location) {
   const targets = {
     castle: { lat: 41.8818, lng: -87.6232 },
@@ -86,6 +87,7 @@ function panTo(location) {
   }
 }
 
+// Slider logic
 let currentSlide = 0;
 let autoSlideInterval = null;
 let isHovering = false;
