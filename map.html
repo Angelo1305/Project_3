@@ -7,9 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="images/triforce.png">
   <script src="js/script.js" defer></script>
-  <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS-UAFGuXF4ULlK8UqZhEpaEHyNGm7g90&callback=initMap">
-  </script>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS-UAFGuXF4ULlK8UqZhEpaEHyNGm7g90&callback=initMap"></script>
 </head>
 <body>
   <nav>
@@ -20,9 +18,11 @@
     <a href="map.html" class="active">Map</a>
   </nav>
 
-  <h1>Zelda World Map</h1>
+  <section>
+    <h1>Zelda World Map</h1>
+  </section>
 
-  <div style="margin: 1.5rem auto; text-align: center;">
+  <section style="margin: 1.5rem auto; text-align: center;">
     <button onclick="panTo('castle')">
       <img src="images/hyrule-icon-60.png" alt="Hyrule Icon"> Go to Hyrule Castle
     </button>
@@ -32,8 +32,10 @@
     <button onclick="panTo('village')">
       <img src="images/kakariko-icon-60.png" alt="Kakariko Icon"> Go to Kakariko Village
     </button>
-  </div>
+  </section>
 
-  <div id="map" style="height: 500px; width: 90%; margin: 2rem auto; border: 0.3rem solid #b8860b; border-radius: 0.5rem;"></div>
+  <section>
+    <div id="map" style="height: 500px; width: 90%; margin: 2rem auto; border: 0.3rem solid #b8860b; border-radius: 0.5rem;"></div>
+  </section>
 </body>
 </html>
